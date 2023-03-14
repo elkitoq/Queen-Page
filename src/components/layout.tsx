@@ -25,7 +25,7 @@ export const LayoutApp: React.FC<LayoutAppProps> = ({ children }) => {
         <Head>
           <title>The Queen Experience</title>
         </Head>
-        <Navbar />
+        {/*<Navbar />*/}
         <ChakraBox initial={{ opacity: 0 }} animate={{ opacity: 1, transition:{duration: 1.5} }}>
             {children}
         </ChakraBox>
