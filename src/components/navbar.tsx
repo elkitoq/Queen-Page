@@ -12,6 +12,7 @@ import {
 import Logo from '../../public/img/queen.png'
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import NextLink from 'next/link'
+import { useRouter } from 'next/router';
 
 const Links = [
     {
@@ -46,10 +47,11 @@ const NavLink = ({ children, href }: { children: ReactNode, href: string }) => (
 
 export const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const router = useRouter()
 
   return (
     <>
-      <Box bg={'black'} px={6} pt={2} position={'absolute'} width={'100%'} zIndex={10}>
+      <Box bg={'black'} px={6} pt={2} position={router.asPath == '/members' || router.asPath == '/' || router.asPath == '/discography' ? 'absolute' : 'relative'} width={'100%'} zIndex={10}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
@@ -60,9 +62,9 @@ export const Navbar = () => {
           />
           <HStack spacing={8} alignItems={'center'}>
             <Box>
-                <NavLink href={'/'} >
+                <Link as={NextLink} href={'/'}>
                     <Image width={'50px'} src={Logo.src} />
-                </NavLink>
+                </Link>
             </Box>
             <HStack
               as={'nav'}
