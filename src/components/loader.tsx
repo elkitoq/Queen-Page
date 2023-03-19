@@ -34,7 +34,7 @@ const ChakraBox = chakra(motion.div, {
   100% { opacity: 0.1}
 `;
 
-const animation = `${animationKeyframes} 2s linear infinite`;
+const animation = `${animationKeyframes} 4s linear infinite`;
 
 export const Loader = () => {
   return (
