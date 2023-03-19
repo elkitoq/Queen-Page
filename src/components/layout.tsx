@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import { chakra, shouldForwardProp } from '@chakra-ui/react'
-import { motion, isValidMotionProp } from 'framer-motion'
+import { motion, isValidMotionProp, AnimatePresence } from 'framer-motion'
 import {Navbar} from './navbar'
 
 const ChakraBox = chakra(motion.div, {
@@ -26,9 +26,11 @@ export const LayoutApp: React.FC<LayoutAppProps> = ({ children }) => {
           <title>The Queen Experience</title>
         </Head>
         <Navbar />
-        <ChakraBox initial={{ opacity: 0 }} animate={{ opacity: 1, transition:{duration: 1.5} }}>
-            {children}
-        </ChakraBox>
+        <AnimatePresence>
+            <ChakraBox initial={{ opacity: 0 }} animate={{ opacity: 1, transition:{duration: 1.5} }} exit={{ opacity: 0 }}>
+                {children}
+            </ChakraBox>
+        </AnimatePresence>
     </>
   )
 }
