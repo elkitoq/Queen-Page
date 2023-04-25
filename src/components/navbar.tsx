@@ -13,6 +13,7 @@ import Logo from '../../public/img/queen.png'
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import NextLink from 'next/link'
 import { useRouter } from 'next/router';
+import '@fontsource/bellota-text'
 
 const Links = [
     {
@@ -69,7 +70,9 @@ export const Navbar = () => {
             <HStack
               as={'nav'}
               spacing={4}
-              display={{ base: 'none', md: 'flex' }}>
+              display={{ base: 'none', md: 'flex' }}
+              fontFamily={'Bellota Text'}
+            >
               {Links.map((link) => (
                 <NavLink key={link.title} href={link.path}>{link.title}</NavLink>
               ))}
@@ -81,7 +84,7 @@ export const Navbar = () => {
 
         {isOpen ? (
           <Box pb={4} display={{ md: 'none' }}>
-            <Stack as={'nav'} spacing={4}>
+            <Stack as={'nav'} spacing={4} fontFamily={'Bellota Text'}>
               {Links.map((link) => (
                 <NavLink key={link.title} href={link.path}>{link.title}</NavLink>
               ))}
