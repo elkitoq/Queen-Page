@@ -1,4 +1,4 @@
-import { chakra, keyframes, shouldForwardProp} from '@chakra-ui/react'
+import { chakra, Image, keyframes, shouldForwardProp} from '@chakra-ui/react'
 import Logo from '../../public/img/queen.png'
 import React from 'react'
 import { isValidMotionProp, motion } from 'framer-motion';
@@ -39,15 +39,20 @@ const animation = `${animationKeyframes} 4s linear infinite`;
 export const Loader = () => {
   return (
     <ChakraBox 
-        width={'auto'} 
-        height={'100%'}
-        m={0} 
-        padding={0} 
-        bgImage={Logo.src} 
-        margin={0} 
-        backgroundRepeat={'no-repeat'} 
-        backgroundPosition={'center'} 
-        animation={animation}        
-    />
+        width={'100%'} 
+        height={'100%'}  
+        animation={animation}
+        display={'flex'}        
+    >
+      <Image 
+        width={{base: '300px',md: '80%'}} 
+        height={{base: '300px',md: '80%'}}
+        objectFit={'contain'}
+        objectPosition={'center'}
+        margin={'auto'}
+        marginY={'auto'}
+        src={Logo.src}
+      />
+    </ChakraBox>
   )
 }
