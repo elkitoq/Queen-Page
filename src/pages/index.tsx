@@ -1,9 +1,9 @@
 import { Loader } from '@/components/loader'
 import { Container } from '@chakra-ui/react'
+import { NextPage } from 'next'
 
 
-export default function Home() {
-
+const HomePage: NextPage = ()=> {
   return (
     <>
       <Container width={'100vw'} maxWidth={'100vw'} height={'100vh'}>
@@ -12,3 +12,5 @@ export default function Home() {
     </>
   )
 }
+
+export default HomePage
