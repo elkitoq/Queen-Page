@@ -35,12 +35,14 @@ export const AnimationIntoView = ({
   visible,
   hidden,
   time,
+  order
 }: {
   children: ReactNode
   visible: visibleProps
   hidden: hiddenProps
   IndexZ?: number
   time?: number
+  order?: number
 }) => {
   const animationVariants = {
     visible: {...visible, transition: {duration: time}},
@@ -65,6 +67,7 @@ export const AnimationIntoView = ({
       initial="hidden"
       style={{width: '100%'}}
       variants={animationVariants}
+      order={{sm: order}}
     >
       {children}
     </ChakraBox>
