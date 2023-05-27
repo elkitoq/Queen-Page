@@ -29,10 +29,10 @@ const CarAnimation: React.FC<{}> = () => {
   const animationVariants = {
     mobile:{
       visible: {scale:1,left: '5%',top: '80%',opacity: 0, Y: [null,20,0], transition: {duration: 2}},
-      hidden: {scale: 2, left:'50%', top: '50%', transition: {duration: 2}}
+      hidden: {scale: 2, left:'70%', top: '50%',opacity: 1, transition: {duration: 2}}
     },
     tablet:{
-      visible: {scale:1,left: '5%',top: '70%', Y: [null,20,0], transition: {duration: 2}},
+      visible: {scale:1,left: '5%',top: '73%', Y: [null,20,0], transition: {duration: 2}},
       hidden: {scale: 1.5, left:'40%', top: '50%', transition: {duration: 2}}
     },
     desktop:{

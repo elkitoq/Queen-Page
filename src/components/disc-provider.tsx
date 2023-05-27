@@ -20,4 +20,4 @@ export const DiscProvider = ({ children }: {children: React.ReactNode}) => {
             {children}
         </DiscContext.Provider>
     )
-  };
+  }

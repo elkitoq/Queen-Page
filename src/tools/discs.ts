@@ -3,7 +3,7 @@ export type DiscType = {
   title: string
   date: string
   songs: string[]
-  reproducibleSong?: string
+  reproducibleSong: string
 }
 
 export const Discs: DiscType[]= [
@@ -23,7 +23,7 @@ export const Discs: DiscType[]= [
         'Jesus',
         'Seven Seas of Rhye...'
       ],
-      reproducibleSong: ''
+      reproducibleSong: 'https://res.cloudinary.com/djrsax1to/video/upload/v1683755271/oqjvapehs4merzuevmqo.mp3'
     },
     {
       imgPath:'https://www.udiscovermusic.com/wp-content/uploads/2019/03/Queen-II-album-cover-820.jpg',
@@ -42,7 +42,7 @@ export const Discs: DiscType[]= [
         'Funny How Love Is',
         'Seven Seas Of Rhye'
       ],
-      reproducibleSong: ''
+      reproducibleSong: 'https://res.cloudinary.com/djrsax1to/video/upload/v1683755346/mnavhmukq7wv75cbc79d.mp3'
     },
     {
       imgPath:'https://radiocellenvivo.com/wp-content/uploads/2022/11/queenD_NQ_NP_605602-MLA32791383116_112019-O.jpg',
@@ -63,7 +63,7 @@ export const Discs: DiscType[]= [
         "She Makes Me",
         "In the Lap of the Gods"
       ],
-      reproducibleSong: ''
+      reproducibleSong: 'https://res.cloudinary.com/djrsax1to/video/upload/v1683755461/rwvhkybwzwymx09y0lig.mp3'
     },
     {
       imgPath:'https://humonegro.com/wp-content/uploads/QUEEN-A-NIGHT-AT-THE-OPERA.png',
@@ -83,7 +83,7 @@ export const Discs: DiscType[]= [
         'Bohemian Rhapsody',
         'God Save the Queen'
       ],
-      reproducibleSong: ''
+      reproducibleSong: 'https://res.cloudinary.com/djrsax1to/video/upload/v1683755576/b3i7ltoitahjns4b8mkq.mp3'
     },
     {
       imgPath:'https://dvfnvgxhycwzf.cloudfront.net/media/SharedImage/imageFull/.fWTO8N2T/SharedImage-27121.jpg?t=a86658f02468b3f38334',
@@ -101,7 +101,7 @@ export const Discs: DiscType[]= [
         "Drowse",
         "Teo Torriate (Let us Cling Together)"
       ],
-      reproducibleSong: ''
+      reproducibleSong: 'https://res.cloudinary.com/djrsax1to/video/upload/v1683755602/fswisa9a1mltpixqfpdu.mp3'
     },
     {
       imgPath:'https://www.udiscovermusic.com/wp-content/uploads/2018/10/news-of-the-world.jpg',
@@ -120,7 +120,7 @@ export const Discs: DiscType[]= [
         "It's Late",
         "My Melancholy Blues"
       ],
-      reproducibleSong: ''
+      reproducibleSong: 'https://res.cloudinary.com/djrsax1to/video/upload/v1683755633/pxfzmu0n2paiys2xd4pp.mp3'
     },
     {
       imgPath:'https://www.udiscovermusic.com/wp-content/uploads/2018/11/Queen-Jazz-album-cover-820-820x820.jpg',
@@ -141,7 +141,7 @@ export const Discs: DiscType[]= [
         "Don't Stop Me Now",
         "More Of That Jazz"
       ],
-      reproducibleSong: ''
+      reproducibleSong: 'https://res.cloudinary.com/djrsax1to/video/upload/v1683755674/wvochfcvimccjehk8dr2.mp3'
     },
     {
       imgPath:'https://external-preview.redd.it/yNb2Vs9fqnhUOjzgCNw3iiPhjGTi4iNBKhM7iGWCERI.jpg?auto=webp&s=6739b9b90a1e23d609aae5270da203f0ad2f9de0',
@@ -159,7 +159,7 @@ export const Discs: DiscType[]= [
         "Coming Soon",
         "Save Me"
       ],
-      reproducibleSong: ''
+      reproducibleSong: 'https://res.cloudinary.com/djrsax1to/video/upload/v1683755705/vq3zz8evmespxxzfyxas.mp3'
     },
     {
       imgPath:'https://res.cloudinary.com/djrsax1to/image/upload/v1682359241/qxktdps4qhfs0ggjqn8f.webp',
@@ -178,7 +178,7 @@ export const Discs: DiscType[]= [
         "Cool Cat",
         "Under Pressure"
       ],
-      reproducibleSong: ''
+      reproducibleSong: 'https://res.cloudinary.com/djrsax1to/video/upload/v1683755732/myqytidv0qmgot7hchyx.mp3'
     },
     {
       imgPath:'https://www.latercera.com/resizer/C7idbqUO5w4hI55_4rK5ndSxMO0=/800x0/smart/arc-anglerfish-arc2-prod-copesa.s3.amazonaws.com/public/P2SZ6VXJTJDMVNHYXNK2GGTXGM.jpg',
@@ -195,7 +195,7 @@ export const Discs: DiscType[]= [
         "Hammer to Fall",
         "Is This the world we created...?"
       ],
-      reproducibleSong: ''
+      reproducibleSong: 'https://res.cloudinary.com/djrsax1to/video/upload/v1683755858/gfewb8a2qnyn4c9hofws.mp3'
     },
     {
       imgPath:'https://www.udiscovermusic.com/wp-content/uploads/2019/11/a-kind-of-magic.jpg',
@@ -212,7 +212,7 @@ export const Discs: DiscType[]= [
         "Don't Lose Your Head",
         "Princes of the Universe"
       ],
-      reproducibleSong: ''
+      reproducibleSong: 'https://res.cloudinary.com/djrsax1to/video/upload/v1683755909/z5xp0ykttxssaqu4woya.mp3'
     },
     {
       imgPath:'https://i.pinimg.com/736x/b1/df/19/b1df199e82d5a7a5a6d3f67e0694914e.jpg',
@@ -230,7 +230,7 @@ export const Discs: DiscType[]= [
         "My Baby Does Me",
         "Was It All Worth It"
       ],
-      reproducibleSong: ''
+      reproducibleSong: 'https://res.cloudinary.com/djrsax1to/video/upload/v1683755936/hkjt5achdn8xd4xkbku3.mp3'
     },
     {
       imgPath:'https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/91MuLBfNmVL._SL1500_.jpg',
@@ -250,7 +250,7 @@ export const Discs: DiscType[]= [
         "Bijou",
         "The Show Must Go On"
       ],
-      reproducibleSong: ''
+      reproducibleSong: 'https://res.cloudinary.com/djrsax1to/video/upload/v1683755963/ghw3obfhgvkjvmffkr5o.mp3'
     },
     {
       imgPath:'https://i.discogs.com/7GyzOJSA4m2rOA8pYWu8UOOPI4qXsixM1EYw1-5Bw8w/rs:fit/g:sm/q:90/h:587/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzODMz/MjktMTIxNDkxMzEx/MC5qcGVn.jpeg',
@@ -269,7 +269,7 @@ export const Discs: DiscType[]= [
         "A Winter's Tale",
         "It's a Beautiful Day (reprise)"
       ],
-      reproducibleSong: ''
+      reproducibleSong: 'https://res.cloudinary.com/djrsax1to/video/upload/v1683755995/tsqa5gwlqcatkzzizxk2.mp3'
     }
   ];
 

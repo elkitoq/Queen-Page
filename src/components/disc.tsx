@@ -3,12 +3,13 @@ import { isValidMotionProp, motion, useAnimation } from 'framer-motion';
 import React, { useContext, useEffect, useState, useRef } from 'react'
 import { DiscContext } from 'src/tools/Disc-Context'
 import { DiscType } from 'src/tools/discs'
+import { MusicPlayer } from './music-player';
 
 const ChakraBox = chakra(motion.div, {
     shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
-  });
+});
 
-export const Disc = (disc: DiscType) => {
+const Disc= (disc: DiscType) => {
 
     const discContext = useContext(DiscContext)
     const controls = useAnimation()
@@ -19,47 +20,37 @@ export const Disc = (disc: DiscType) => {
 
     useEffect(() => {
 
-        discContext.setIsVisible(true)
+        controls.start('exit')        
 
     }, [discContext.position])
 
-    useEffect(() => {
-
+    useEffect(()=>{
         if(!discContext.isVisible){
-            controls.start('exit')
+            controls.start('hidden')
         }
-
         if(discContext.isVisible){
             controls.start('visible')
         }
-
-    }, [discContext.isVisible])
+    },[discContext.isPlaying])
     
-    // const discAnimation = {
-    //     hidden: {opacity: 0, left: '102%', transition:{ duration: 2 }},
-    //     visible: {opacity: 1, left: '40%', transition:{ duration: 2 }},
-    //     exit: { opacity: 0, left: ['102%','40%'], transition:{ duration: 3 } }
-    // }
-
     const discAnimation = {
         // Define la animación según el tamaño del dispositivo actual
         mobile: {
           hidden: { opacity: 0, left: '102%', transition: { duration: 2 } },
           visible: { opacity: 1, left: '1%', transition: { duration: 2 } },
-          exit: { opacity: 0, left: ['102%', '20%'], transition: { duration: 3 } },
+          exit: { opacity: [0,0,1], left: ['1%','102%', '1%'], transition: { duration: 1 } },
         },
         tablet: {
           hidden: { opacity: 0, left: '102%', transition: { duration: 2 } },
-          visible: { opacity: 1, left: '10%', transition: { duration: 2 } },
-          exit: { opacity: 0, left: ['102%', '40%'], transition: { duration: 3 } },
+          visible: { opacity: 1, left: '15%', transition: { duration: 2 } },
+          exit: { opacity: 1, left: ['15%','102%', '15%'], transition: { duration: 0.1 } },
         },
         desktop: {
-          hidden: { opacity: 0, left: '102%', transition: { duration: 2 } },
+          hidden: { opacity: 0, left: '102%', transition: { duration: 1 } },
           visible: { opacity: 1, left: '40%', transition: { duration: 2 } },
-          exit: { opacity: 0, left: ['102%', '50%'], transition: { duration: 3 } },
+          exit: { opacity: [0,0,1], left: ['50%', '102%','40%'], transition: { duration: 1 } },
         },
-      };
-
+    };
 
   return (
     <ChakraBox 
@@ -72,18 +63,17 @@ export const Disc = (disc: DiscType) => {
         animate={controls}
         initial={'hidden'}
         exit={'exit'}
-        minWidth={{base: '98%',md: '80%',lg:'1050px'}}
-        maxWidth={{base: '98',md: '80%',lg: '1050px'}}
-        minHeight={{base: '75%',md: '600',lg: '660px'}}
-        maxHeight={{base: '75%',md: 'auto',lg: '660px'}}
+        minWidth={{base: '98%',md: '70%',lg:'1050px'}}
+        maxWidth={{base: '98%',md: '70%',lg: '1050px'}}
+        minHeight={{base: '80%',md: '600',lg: '660px'}}
+        maxHeight={{base: '80%',md: 'auto',lg: '660px'}}
         variants={discAnimation[deviceType]}
-        
     >
-        {!isMobile && <HStack gap={20}> 
+        {!isMobile && <HStack gap={16}> 
             <Image src={disc.imgPath} alt={`disc cover of ${disc.title}`} width={500} height={500}/>
             <VStack color={'white'} gap={5}>
                 <VStack>
-                    <Heading size={'xl'} textAlign={'center'}>{disc.title}</Heading>
+                    <Heading fontSize={disc.title.length > 10 ? '30px' : '32px'} textAlign={'center'}>{disc.title}</Heading>
                     <legend>({disc.date})</legend>
                 </VStack>
                 <UnorderedList listStyleType={'circle'} display={'flex'} flexDir={'column'} gap={2} fontWeight={600}>
@@ -91,13 +81,13 @@ export const Disc = (disc: DiscType) => {
                         return <ListItem>{song}</ListItem>
                     })}
                 </UnorderedList>
-
+                    <MusicPlayer songUrl={disc.reproducibleSong as string} />
             </VStack>
         </HStack>}
 
-        {isMobile && <VStack justifyContent={'center'} alignItems={'center'}> 
+        {isMobile && <VStack justifyContent={'center'} alignItems={'center'} gap={{base: 2, md: 4}}> 
             <Image src={disc.imgPath} alt={`disc cover of ${disc.title}`} width={150} height={150}/>
-            <VStack color={'white'} >
+            <VStack color={'white'} gap={2}>
                 <VStack>
                     <Heading size={'sm'} textAlign={'center'}>{disc.title} ({disc.date})</Heading>
                 </VStack>
@@ -106,9 +96,11 @@ export const Disc = (disc: DiscType) => {
                         return <ListItem fontSize={'12px'}>{song}</ListItem>
                     })}
                 </UnorderedList>
-
+                <MusicPlayer songUrl={disc.reproducibleSong as string} />
             </VStack>
         </VStack>}
     </ChakraBox>
   )
 }
+
+export default Disc

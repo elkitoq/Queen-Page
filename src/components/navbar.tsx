@@ -61,7 +61,7 @@ export const Navbar = () => {
             display={{ md: 'none' }}
             onClick={isOpen ? onClose : onOpen}
           />
-          <HStack spacing={8} alignItems={'center'}>
+          <HStack spacing={8} alignItems={'center'} width={'100%'}>
             <Box>
                 <Link as={NextLink} href={'/'}>
                     <Image width={'50px'} src={Logo.src} />
@@ -69,9 +69,12 @@ export const Navbar = () => {
             </Box>
             <HStack
               as={'nav'}
-              spacing={4}
+              spacing={12}
               display={{ base: 'none', md: 'flex' }}
+              justifyContent={'center'}
               fontFamily={'Bellota Text'}
+              width={'100%'}
+              fontSize={18}
             >
               {Links.map((link) => (
                 <NavLink key={link.title} href={link.path}>{link.title}</NavLink>
